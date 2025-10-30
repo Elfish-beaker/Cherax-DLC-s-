@@ -1,0 +1,128 @@
+local Features = {}
+local PlayerFeatures = {}
+local origPlayerFeat = FeatureMgr.AddPlayerFeature
+FeatureMgr.AddPlayerFeature = function(hash, name, ...)
+    table.insert(PlayerFeatures, hash)
+    return origPlayerFeat(hash, name, ...)
+end
+
+origAddFeat = FeatureMgr.AddFeature
+FeatureMgr.AddFeature = function(hash, name, ...)
+    table.insert(Features, hash)
+    return origAddFeat(hash, name, ...)
+end
+
+FeatureMgr.AddPlayerFeature(Utils.Joaat("testingplayerfeathashes"), "test", eFeatureType.Toggle, "", function(Feat)
+    while Feat:IsToggled() do 
+
+        GTA.TriggerScriptEvent(1 << Utils.GetSelectedPlayer(), {373376135, GTA.GetLocalPlayerId(), 1 << Utils.GetSelectedPlayer(), GTA.GetLocalPlayerId(), 1, 1 })
+        Script.Yield(1)
+    end
+end)
+
+FeatureMgr.AddPlayerFeature(Utils.Joaat("test2"), "test2", eFeatureType.Toggle, "", function(Feat)
+    while Feat:IsToggled() do 
+
+        GTA.TriggerScriptEvent(1<<Utils.GetSelectedPlayer(), {-1773335296, GTA.GetLocalPlayerId(), 1 << Utils.GetSelectedPlayer(), 1162890817, 5526321, 0, 0, 0, 0})
+        Script.Yield(1)
+    end
+end)
+
+FeatureMgr.AddPlayerFeature(Utils.Joaat("test3"), "random event thingy", eFeatureType.Button, "", function(Feat)
+    GTA.TriggerScriptEvent(1<<Utils.GetSelectedPlayer(), {-157970864, GTA.GetLocalPlayerId(), 1<<Utils.GetSelectedPlayer(), 0, 0, 0, Utils.GetSelectedPlayer()})
+end)
+
+--[[
+[07:19:09.570] [Script Event] Receiver: GustavorIII | SCRIPT_EVENT_AIRDEF_DIALOGUE_PRIVATE_YACHT | Args(7): [-157970864 - 0 - 2 - 0 - 1 - 0 - 2 ] (2)
+[07:19:10.859] [Script Event] Receiver: DannnyS95 | SCRIPT_EVENT_AIRDEF_DIALOGUE_PRIVATE_YACHT | Args(7): [-157970864 - 0 - 32 - 0 - 1 - 0 - 32 ]
+[07:19:11.075] [Script Event] Receiver: DannnyS95 | SCRIPT_EVENT_AIRDEF_DIALOGUE_PRIVATE_YACHT | Args(7): [-157970864 - 0 - 32 - 0 - 1 - 0 - 32 ]
+
+]]
+--[06:00:27.517] [Script Event] Receiver: RINITOSHI1 | SCRIPT_EVENT_SEND_BASIC_TEXT | Args(9): [-1773335296 - 0 - 2 - 1599363155 - 5526321 - 0 - 0 - 0 - 0 ]
+
+
+local isFriend = {}
+
+IsPlayerFriend = function(pid)
+    if not ShouldUnload() then
+        Script.Yield(1000)
+    end
+    if string.find(Players.GetTags(pid), "%[F%]") then
+        isFriend[pid] = true
+    else
+        isFriend[pid] = false
+    end
+end
+
+
+FeatureMgr.AddFeature(Utils.Joaat("AutoGiveFriendsSemiGodmode"), "Auto Give Friends Semi-Godmode", eFeatureType.Toggle, "Automatically gives friends semi-godmode.", function(f)
+    while f:IsToggled() do
+        for _, pid in pairs(Players.Get()) do            
+            if isFriend[pid] then
+                local SemiGodModeFeature = FeatureMgr.GetFeature(Utils.Joaat("RemoteSemiGodMode"), pid) -- thank you mira 
+                if SemiGodModeFeature:GetBoolValue() == true then 
+                    GUI.AddToast("Test Script", "Friend: "..Players.GetName(pid).." already has semi-godmode.", 5000)
+                    Logger.LogInfo("Friend: "..Players.GetName(pid).." already has semi-godmode.")
+                    break 
+                end
+                GUI.AddToast("Test Script", "Giving semi-godmode to friend: "..Players.GetName(pid), 5000)
+                Logger.LogInfo("Giving semi-godmode to friend: "..Players.GetName(pid))
+                SemiGodModeFeature:SetBoolValue(true)
+            end
+        end
+        Script.Yield(1000)
+    end
+end)
+
+
+Script.RegisterLooped(function()
+    if not FeatureMgr.IsFeatureEnabled(Utils.Joaat("AutoGiveFriendsSemiGodmode")) then return end 
+
+end) 
+
+ImGui = ImGui or {}
+
+ImGui.BeginCustomChildWindow = function(id, label, border)
+    border = border or true
+
+    ImGui.PushStyleVar(ImGuiStyleVar.ChildRounding, 8.0)
+    ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, 6, 4)
+    ImGui.PushStyleColor(ImGuiCol.ChildBg, 0.05, 0.05, 0.05, 1.0)  
+    ImGui.PushStyleColor(ImGuiCol.Separator, 0.1, 0.1, 0.1, 0.45)
+    ImGui.PushStyleColor(ImGuiCol.Border, 1, 1, 1, 1.0)    
+
+    local winWidth, winHeight = ImGui.GetContentRegionAvail()
+    local height = winHeight * 0.25 
+    ImGui.BeginChild(id, winWidth, height, border)
+
+    local windowWidth, _ = ImGui.GetWindowSize() -- not using y value so just _ 
+    local textWidth, _ = ImGui.CalcTextSize(label) --^
+    ImGui.SetCursorPosX((windowWidth - textWidth) * 0.5)
+    ImGui.SetCursorPosY(6)
+    ImGui.Text(label)
+
+    ImGui.SetCursorPosY(ImGui.GetCursorPosY() + 3)
+    ImGui.Separator()
+
+end
+
+ImGui.EndCustomChildWindow = function()
+    ImGui.EndChild()
+    ImGui.PopStyleColor(3)
+    ImGui.PopStyleVar(2)
+end
+
+ClickGUI.AddTab("tyuityeoiru", function()
+    ImGui.BeginCustomChildWindow("TestSection", "Test")
+    for k, v in pairs(Features) do
+        ClickGUI.RenderFeature(v)
+    end
+    ImGui.EndCustomChildWindow()
+end)
+
+ClickGUI.AddPlayerTab("tyuityeoiru", function()
+    for k, v in pairs(PlayerFeatures) do
+        if v == Utils.Joaat("test2") then ImGui.SameLine() end
+        ClickGUI.RenderFeature(v, Utils.GetSelectedPlayer())
+    end
+end)
