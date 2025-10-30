@@ -1,11 +1,4 @@
--- Heist Tool V2.3, Made by prizely, 阿特拉斯中国区客服
--- Special Thanks to @Elfish-Tweaker, @jefbxl, Elf on top!!
-
-notification.show("欢迎使用阿特拉斯任务工具 V2.3") -- welcome message
-------------------- Auth Check -------------------
-
-------------------- End Auth Check -------------------
-
+notification.show("Thanks for using Heist Tool V2.3") -- welcome message
 ------------------Start Content Section--------------------
 
 ------------------Cayo Section--------------------
@@ -27,7 +20,7 @@ local function unlockAllCayoPOI()
     STATS.STAT_SET_INT(MISC.GET_HASH_KEY("MP1_H4_PLAYTHROUGH_STATUS"), 10, true)
     locals.set_int("heist_island_planning", 1568, 2)
 
-    notification.show("已解锁所有兴趣点")
+    notification.show("Unlocked all Cayo POI")
 end
 
 
@@ -35,10 +28,10 @@ end
 local selectedDifficulty = 126823
 
 local difficulties = {{
-    name = "普通",
+    name = "Normal",
     index = 126823
 }, {
-    name = "困难",
+    name = "Hard",
     index = 131055
 }}
 
@@ -46,66 +39,66 @@ local difficulties = {{
 local selectedApproach = 65283
 
 local approaches = {{
-    name = "科萨卡",
+    name = "Kosatka",
     index = 65283
 }, {
-    name = "阿尔科诺斯特",
+    name = "Alkonost",
     index = 65413
 }, {
-    name = "乔氏梅杜莎",
+    name = "Velum",
     index = 65289
 }, {
-    name = "隐形歼灭者 ",
+    name = "Stealth Annih.",
     index = 65425
 }, {
-    name = "巡逻艇",
+    name = "Patrol Boat",
     index = 65313
 }, {
-    name = "长鳍",
+    name = "Longfin",
     index = 65345
 }, {
-    name = "所有方式",
+    name = "All Ways",
     index = 65535
 }}
 -- Weapon Loadouts
 local selectedLoadout = 1
 
 local loadouts = {{
-    name = "Aggressor(侵略者)",
+    name = "Aggressor",
     index = 1
 }, {
-    name = "Conspirator(密谋者)",
+    name = "Conspirator",
     index = 2
 }, {
-    name = "Crackshot(狙击者)",
+    name = "Crackshot",
     index = 3
 }, {
-    name = "Saboteur(破坏者)",
+    name = "Saboteur",
     index = 4
 }, {
-    name = "Marksman(射击者)",
+    name = "Marksman",
     index = 5
 }}
 
 local selectedTarget = 0
 
 local targets = {{
-    name = "辛西米托龙舌兰酒($900,000)",
+    name = "Tequila($900,000)",
     index = 0
 }, {
-    name = "红宝石项链($1,000,000)",
+    name = "Ruby Necklace($1,000,000)",
     index = 1
 }, {
-    name = "无记名债券($1,100,100)",
+    name = "Bearer Bonds($1,100,100)",
     index = 2
 }, {
-    name = "粉红钻石($1,300,000)",
+    name = "Pink Diamond($1,300,000)",
     index = 3
 }, {
-    name = "玛德拉索的档案($1,100,100)",
+    name = "Madrazo Files($1,100,100)",
     index = 4
 }, {
-    name = "美洲豹雕像($1,900,100)",
+    name = "Panther Statue($1,900,100)",
     index = 5
 }}
 
@@ -115,27 +108,27 @@ local selectedIslandTarget = "NONE"
 
 -- Loot Types
 local secondaryTargets = {{
-    name = "空白",
+    name = "None",
     index = "NONE"
 }, {
-    name = "现金",
+    name = "Cash",
     index = "CASH"
 }, {
-    name = "大麻",
+    name = "Weed",
     index = "WEED"
 }, {
-    name = "可卡因",
+    name = "Coke",
     index = "COKE"
 }, {
-    name = "黄金",
+    name = "Gold",
     index = "GOLD"
 }}
 
 local selectedCompoundAmount = 255
 
 local compoundAmounts = {
-    {name = "空的", index = 0},
-    {name = "满的", index = 255},
+    {name = "Empty", index = 0},
+    {name = "Full", index = 255},
     {name = "1", index = 128},
     {name = "2", index = 64},
     {name = "3", index = 196},
@@ -148,8 +141,8 @@ local compoundAmounts = {
 local selectedIslandAmount = 16777215
 
 local islandAmounts = {
-    {name = "空的", index = 0},
-    {name = "满的", index = 16777215},
+    {name = "Empty", index = 0},
+    {name = "Full", index = 16777215},
     {name = "1", index = 8388608},
     {name = "2", index = 12582912},
     {name = "3", index = 12845056},
@@ -260,7 +253,7 @@ local function applyPreps(
     -- Trigger Save
     locals.set_int("heist_island_planning", 1568, 2)
 
-    notification.show("已应用并完成佩里科岛抢劫的前置准备!")
+    notification.show("Applied and completed preps for Cayo Perico!")
 end
 
 local function MPX()
@@ -285,7 +278,7 @@ local function reset_cayo_preps()
     -- Set local to force reload 
     locals.set_int("heist_island_planning", 1568, 2)
 
-    notification.show("佩里科岛抢劫准备已重置")
+    notification.show("Cayo Perico preps have been reset.")
 end
 
 local cayoP1Cut = 100
@@ -400,7 +393,7 @@ local function casino_silent_preset()
     STATS.STAT_SAVE(globals.get_int(1574927), true, 3, 0)
     script.sleep(100)
     locals.set_int("gb_casino_heist_planning", 210, 2)
-    notification.show("隐秘潜入已生效!")
+    notification.show("Diamond Silent & Sneaky Preset Applied!")
 end
 
 -- The Big Con Approach
@@ -526,7 +519,7 @@ local function casino_big_con_preset()
     STATS.STAT_SAVE(globals.get_int(1574927), true, 3, 0)
     script.sleep(100)
     locals.set_int("gb_casino_heist_planning", 210, 2)
-    notification.show("兵不厌诈已生效!")
+    notification.show("Diamond The Big Con Preset Applied!")
 end
 
 -- Aggressive approach 
@@ -653,7 +646,7 @@ local function casino_aggressive_preset()
     STATS.STAT_SAVE(globals.get_int(1574927), true, 3, 0)
     script.sleep(100)
     locals.set_int("gb_casino_heist_planning", 210, 2)
-    notification.show(("暴力强攻已生效!"))
+    notification.show(("Diamond Aggressive Preset Applied!"))
 end
 
 -- reset casino heist prep stats
@@ -783,7 +776,7 @@ local function reset_casino_preps()
     STATS.STAT_SAVE(globals.get_int(1574927), true, 3, 0)
     script.sleep(100)
     locals.set_int("gb_casino_heist_planning", 210, 2)
-    notification.show("抢劫计划、准备已重置!")
+    notification.show("Heist Preperations Are Reset!")
 end
 
 -- instant finish casino heist
@@ -805,7 +798,7 @@ local function instant_finish_casino_heist()
         locals.set_int("fm_mission_controller", 23077, 10000000)
         locals.set_int("fm_mission_controller", 29012, 99999)
         locals.set_int("fm_mission_controller", 32536, 99999)
-		notification.show("立刻完成抢劫...")
+		notification.show("Instantly Complete Heist...")
 
     else --Big con and Silent
         locals.set_int("fm_mission_controller", 21453, 5)          
@@ -813,7 +806,7 @@ local function instant_finish_casino_heist()
         locals.set_int("fm_mission_controller", 23077, 10000000)   
         locals.set_int("fm_mission_controller", 29012, 99999)      
         locals.set_int("fm_mission_controller", 32536, 99999)      
-		notification.show("立刻完成抢劫...")
+		notification.show("Instantly Complete Heist...")
     end
 end
 
@@ -842,7 +835,7 @@ local function applyDoomsdayAct1Preps()
     locals.set_int("gb_gang_ops_planning", 209, 6)
 	STATS.STAT_SAVE(globals.get_int(1574927), true, 3, 0)
 
-    notification.show("已启用 行动 1 - 数据泄露差事")
+    notification.show("Act I Preps Applied - Data Breach")
 end
 
 local function applyDoomsdayAct2Preps()
@@ -861,7 +854,7 @@ local function applyDoomsdayAct2Preps()
     locals.set_int("gb_gang_ops_planning", 209, 6)
 	STATS.STAT_SAVE(globals.get_int(1574927), true, 3, 0)
 
-    notification.show("已启用 行动 2 - 波格丹危机")
+    notification.show("Act II Preps Applied - The Bogdan Problem")
 end
 
 local function applyDoomsdayAct3Preps()
@@ -880,7 +873,7 @@ local function applyDoomsdayAct3Preps()
     locals.set_int("gb_gang_ops_planning", 209, 6)
 	STATS.STAT_SAVE(globals.get_int(1574927), true, 3, 0)
 
-    notification.show("已启用 行动 3 - 末日将至")
+    notification.show("Act III Preps Applied - The Doomsday Scenario")
 end
 
 local function resetDoomsdayPreps()
@@ -903,7 +896,7 @@ local function resetDoomsdayPreps()
 	STATS.STAT_SAVE(globals.get_int(1574927), true, 3, 0)
 
 
-    notification.show("末日抢劫已重置")
+    notification.show("Doomsday Heist Has Been Reset.")
 end
 
 local function applyDoomsdayAct1MaxCuts()
@@ -912,7 +905,7 @@ local function applyDoomsdayAct1MaxCuts()
     globals.set_int(base + 2, 261)
     globals.set_int(base + 3, 261)
     globals.set_int(base + 4, 261)
-    notification.show("已应用数据泄露差事最大分红") 
+    notification.show("Act I Max Cuts Applied - Data Breach")
 end
 
 local function applyDoomsdayAct2MaxCuts()
@@ -921,7 +914,7 @@ local function applyDoomsdayAct2MaxCuts()
     globals.set_int(base + 2, 178)
     globals.set_int(base + 3, 178)
     globals.set_int(base + 4, 178)
-    notification.show("已应用波格丹危机最大分红")
+    notification.show("Act II Max Cuts Applied - The Bogdan Problem")
 end
 
 local function applyDoomsdayAct3MaxCuts()
@@ -930,7 +923,7 @@ local function applyDoomsdayAct3MaxCuts()
     globals.set_int(base + 2, 141)
     globals.set_int(base + 3, 141)
     globals.set_int(base + 4, 141)
-    notification.show("已应用末日将至差事最大分红")
+    notification.show("Act III Max Cuts Applied - The Doomsday Scenario")
 end
 
 local function instant_finish_Doomsday_heist()
@@ -968,7 +961,7 @@ local function SkipAllDoomsCheckpoints()
 	local currentVal = locals.get_int("fm_mission_controller_2020", offset)
     locals.set_int("fm_mission_controller_2020", offset1, currentVal | bitToSet)
 
-    notification.show("正在跳过检查点...")
+    notification.show("Skipping Checkpoint...")
 end
 
 local DoomsdayHostCut = 120
@@ -982,18 +975,18 @@ local Doomsdayp4Cut = 120
 -- local selectedContractIndex = 3 -- Default to "None"
 
 local contracts = {
-    "无", 
-    "夜总会", 
-    "码头", 
-    "夜生活泄密",
-    "乡村俱乐部", 
-    "宾客名单", 
-    "上流社会泄密",
-    "戴维斯", 
-    "巴拉斯", 
-    "南中区泄密", 
-    "录音棚时间", 
-    "别惹德瑞"
+    "None", 
+    "Nightclub", 
+    "Marina", 
+    "Nightlife Leak",
+    "Country Club", 
+    "Guest List", 
+    "High Soc. Leak",
+    "Davis", 
+    "Ballas", 
+    "South Central Leak", 
+    "Studio Time", 
+    "Don't # W. Dre"
 }
 
 local contract_ids = {
@@ -1040,7 +1033,7 @@ local function applyContract(value)
     STATS.STAT_SET_INT(generalHash, -1, true)
     STATS.STAT_SET_INT(completedHash, -1, true)
 
-    notification.show("已完成准备并应用合同")
+    notification.show("Applied Contract And Completed Preps, Change Session To Apply")
 end
 
 local function instant_finish_agency_final()
@@ -1066,7 +1059,7 @@ local function instant_finish_agency_final()
     value = value | (1 << 16)
     locals.set_int(script_name, step3_offset, value)
 
-    notification.show("已完成事务所最终任务")
+    notification.show("Instant Finished Agency Finale")
 end
 
 ------------------End agency Section--------------------
@@ -1075,15 +1068,15 @@ end
 -- local selectedAutoShopContractIndex = -1 -- Default to "None"
 
 local autoShopContracts = {
-    "无", 
-    "联合储蓄银行", 
-    "超级美元交易", 
-    "银行合同",
-    "ECU 工作", 
-    "监狱契约", 
-    "代理交易",
-    "合同遗失", 
-    "数据契约"
+    "None", 
+    "Union Depository", 
+    "SuperDollar Deal", 
+    "Bank Contract",
+    "ECU Work", 
+    "Prison Contract", 
+    "Agency Deal",
+    "Lost Contract", 
+    "Data Contract"
 }
 
 local autoShopContracts_ids = {
@@ -1100,7 +1093,7 @@ local autoShopContracts_ids = {
 
 local function apply_and_complete_auto_shop(value)
     if value < 0 then
-        notification.show("没有选择有效的合约")
+        notification.show("No valid contract selected to apply.")
         return
     end
 
@@ -1121,7 +1114,7 @@ local function apply_and_complete_auto_shop(value)
 
     locals.set_int("tuner_planning", 406, 2)
 
-    notification.show("已跳过准备并应用合约")
+    notification.show("Applied Contract And Completed Preps, Change Session To Apply")
 end
 
 
@@ -1164,7 +1157,7 @@ local function classic_heist_instant_()
         locals.set_int("fm_mission_controller", 32467 + 1 + 68, 99999)   
     end
 
-    notification.show("立刻完成抢劫")
+    notification.show("Instantly Complete Heist")
 end
 
 local function unlockAllClassicHeist()
@@ -1198,7 +1191,7 @@ local function unlockAllClassicHeist()
     STATS.STAT_SET_INT(MISC.GET_HASH_KEY("MP1_HEIST_SAVED_STRAND_4"), 3637220192, true)
     STATS.STAT_SET_INT(MISC.GET_HASH_KEY("MP1_HEIST_SAVED_STRAND_4_L"), 5, true)
 
-    notification.show("已解锁所有公寓抢劫任务 -> 请重开游戏以应用.")
+    notification.show("Unlocked All Apartment Heists -> Please Restart Game To Apply.")
 end
 
 local function classic_apply_cuts(cut1, cut2, cut3, cut4)
@@ -1238,40 +1231,38 @@ end
 
 menu.on_draw(function()
     if ImGui.BeginTabBar("MainBar1") then -- FIRST MAIN BAR
-        if ImGui.BeginTabItem("前言/注意事项") then -- Intro Tab Item
-            ImGui.Text("欢迎使用任务工具 V2.3")
-            ImGui.Text("此脚本由阿特拉斯中国区客服(prizely)制作")
+        if ImGui.BeginTabItem("Intro/Warnings") then -- Intro Tab Item
+            ImGui.Text("Thank you for using Heist Tool V2.3")
+            ImGui.Text("Owner: @prizely, Credit to @Jefbxl")
             ImGui.Separator()
-            ImGui.Text("======== !!! 注意事项 !!! ========")
-            ImGui.Text("1. 有些功能可能会导致崩溃或者没反应 有发现麻烦联系我")
-            ImGui.Text("2. 不定期更新")
-            ImGui.Text("3. 任务脚本本身都是有关钱的功能，必定会有些风险，如果有一些高风险的功能我会在功能旁边标记，请注意使用")
-            ImGui.Text("4. 注意：改分红的时候 如果分红超过了100% 可能会报错，无法到账")
-            ImGui.Text("5. 任何可以修改数值的功能可以按Tab键切换输入框")
+            ImGui.Text("======== !!! READ ME !!! ========")
+            ImGui.Text("1. Some features may cause crashes or unresponsiveness. If you encounter any issues, please contact me.")
+            ImGui.Text("2. Updates are irregular.")
+            ImGui.Text("3. The script is primarily focused on money-related functions, which may carry risks.")
+            ImGui.Text("4. Note: When modifying cuts, exceeding 100% may result in errors and prevent payouts.")
+            ImGui.Text("5. Any feature that allows value modification can be toggled with the Tab key.")
             ImGui.Separator()
-            ImGui.Text("有什么问题/bug可以找我, qq:3591990049, discord: prizely")
-            ImGui.Text("== 制作不易, 有空可以请我喝东西 ==")
+            ImGui.Text("If you have any questions/bugs, please contact me on Discord: @prizely")
+            ImGui.Text("Special thanks to: @Jefbxl, @sz, @Elfish-Tweaker for helping!!")
             ImGui.EndTabItem()
         end
 
-        if ImGui.BeginTabItem("佩里克岛抢劫") then -- Cayo Perico Heist Tab Item
+        if ImGui.BeginTabItem("Cayo") then -- Cayo Perico Heist Tab Item
             if ImGui.BeginTabBar("CayoFeatures1") then -- Cayo bar
-                if ImGui.BeginTabItem("准备选项") then -- prep tab
-                    ImGui.Text("预设最高分红为 $2,550,000")
+                if ImGui.BeginTabItem("Prep Option") then -- prep tab
+                    ImGui.Text("Default max payout $2,550,000")
                     
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##1") then
+                    if ImGui.Button("Apply##1") then
                         unlockAllCayoPOI()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("解锁所有兴趣点")
+                    ImGui.Text("Unlock all Points of Interest")
                     
                     ImGui.Separator()
 
-                    
-                    ImGui.Text("先用阿特本来的佩里科岛抢劫的准备选项 不然无法跳过")
-                    if ImGui.Button("应用##2") then
+                    if ImGui.Button("Apply##2") then
                         applyPreps(
                             131055,
                             65283,
@@ -1290,108 +1281,108 @@ menu.on_draw(function()
                         )
                     end
                     ImGui.SameLine()
-                    ImGui.Text("应用最佳佩里科岛抢劫准备设置（无法跳过前置任务）")
+                    ImGui.Text("Apply Preps")
                     
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##3") then
+                    if ImGui.Button("Apply##3") then
                         reset_cayo_preps()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("重置佩里科岛抢劫的前置准备")
+                    ImGui.Text("Reset Cayo Preps")
 
 
                     ImGui.Separator()
 
-                    ImGui.Text("自定义准备选项（选择后请按确认）")
-                    ImGui.Text("选择难度:")
+                    ImGui.Text("Custom Prep Option (Please confirm after selection)")
+                    ImGui.Text("Select Difficulty:")
                     for _, diff in ipairs(difficulties) do
                         if ImGui.RadioButton(diff.name, selectedDifficulty == diff.index) then
                             selectedDifficulty = diff.index
-                            notification.show("已选择难度: " .. diff.name)
+                            notification.show("Selected Difficulty: " .. diff.name)
                         end
                         ImGui.SameLine()
                     end
                     ImGui.NewLine()
 
-                    ImGui.Text("选择入侵点:")
+                    ImGui.Text("Select Approach:")
                     for _, approach in ipairs(approaches) do
                         if ImGui.RadioButton(approach.name, selectedApproach == approach.index) then
                             selectedApproach = approach.index
-                            notification.show("已选择入侵点: " .. approach.name)
+                            notification.show("Selected Approach: " .. approach.name)
                         end
                         ImGui.SameLine()
                     end
                     ImGui.NewLine()
 
-                    ImGui.Text("选择武器配置:")
+                    ImGui.Text("Select Loadout:")
                     for _, loadout in ipairs(loadouts) do
                         if ImGui.RadioButton(loadout.name, selectedLoadout == loadout.index) then
                             selectedLoadout = loadout.index
-                            notification.show("已选择武器配置: " .. loadout.name)
+                            notification.show("Selected Loadout: " .. loadout.name)
                         end
                         ImGui.SameLine()
                     end
                     ImGui.NewLine()
 
-                    ImGui.Text("选择主要目标:")
+                    ImGui.Text("Select Primary Target:")
                     for _, target in ipairs(targets) do
                         if ImGui.RadioButton(target.name, selectedTarget == target.index) then
                             selectedTarget = target.index
-                            notification.show("已选择主要目标: " .. target.name)
-                        end
-                        ImGui.SameLine()
-                    end
-                    ImGui.NewLine()
-                    
-                    ImGui.Text("选择次要目标:")
-                    for _, secTarget in ipairs(secondaryTargets) do
-                        if ImGui.RadioButton(secTarget.name, selectedCompoundTarget == secTarget.index) then
-                            selectedCompoundTarget = secTarget.index
-                            notification.show("已选择次要目标: " .. secTarget.name)
+                            notification.show("Selected Primary Target: " .. target.name)
                         end
                         ImGui.SameLine()
                     end
                     ImGui.NewLine()
 
-                    if ImGui.Button("确认并应用") then
+                    ImGui.Text("Select Secondary Target:")
+                    for _, secTarget in ipairs(secondaryTargets) do
+                        if ImGui.RadioButton(secTarget.name, selectedCompoundTarget == secTarget.index) then
+                            selectedCompoundTarget = secTarget.index
+                            notification.show("Selected Secondary Target: " .. secTarget.name)
+                        end
+                        ImGui.SameLine()
+                    end
+                    ImGui.NewLine()
+
+                    if ImGui.Button("Confirm and Apply") then
                         locals.set_int("heist_island_planning", 1568, 2)
-                        notification.show("已应用并重新加载计划屏幕")
+                        notification.show("Applied and reloaded planning screen")
                     end
                     
                     ImGui.EndTabItem()
                 end
 
-                if ImGui.BeginTabItem("其他功能") then -- other features tab
-                    ImGui.Text("上岛功能")
+                if ImGui.BeginTabItem("Others") then -- other features tab
+                    ImGui.Text("Island Features")
                 
-                    if ImGui.Button("应用##4") then
+                    if ImGui.Button("Apply##4") then
                         locals.set_int("heist_island_planning", 1568, 2)
-                        notification.show("已重新加载计划屏幕")
+                        notification.show("Applied and reloaded planning screen")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("重新加载计划屏幕")
+                    ImGui.Text("Reload Planning Screen")
 
-                    if ImGui.Button("应用##5") then
+                    if ImGui.Button("Apply##5") then
                         locals.set_int("fm_mission_controller_2020", 25460, 5)
-                        notification.show("已绕过指纹破解")
+                        notification.show("Bypassed Fingerprint Hack")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("绕过指纹破解")
+                    ImGui.Text("Bypass Fingerprint Hack")
 
-                    if ImGui.Button("应用##6") then
+                    if ImGui.Button("Apply##6") then
                         locals.set_float("fm_mission_controller_2020", 31525 + 3, 100.0)
-                        notification.show("已跳过切割主要目标玻璃")
+                        notification.show("Bypassed Plasma Cutter")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("跳过切割主要目标玻璃")
+                    ImGui.Text("Bypass Plasma Cutter")
 
-                    if ImGui.Button("应用##7") then
+                    if ImGui.Button("Apply##7") then
                         locals.set_int("fm_mission_controller_2020", 30285, 6)
-                        notification.show("已切割排水管")
+                        notification.show("Bypassed Drainage Pipe Cut")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("一键切割排水管")
+                    ImGui.Text("Bypass Drainage Pipe Cut")
 
                     ImGui.Separator()
 
@@ -1400,75 +1391,50 @@ menu.on_draw(function()
                         return "MP" .. tostring(charIndex) .. "_"
                     end
 
-                    if ImGui.Button("应用##8") then
+                    if ImGui.Button("Apply##8") then
                         local prefix = MPX()
                         STATS.STAT_SET_INT(MISC.GET_HASH_KEY(prefix .. "H4_TARGET_POSIX"), 1659643454, true)
                         STATS.STAT_SET_INT(MISC.GET_HASH_KEY(prefix .. "H4_COOLDOWN"), 0, true)
                         STATS.STAT_SET_INT(MISC.GET_HASH_KEY(prefix .. "H4_COOLDOWN_HARD"), 0, true)
-                        notification.show("已移除单人冷却时间")
+                        notification.show("Removed Solo Cooldown")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("移除单人冷却时间")
+                    ImGui.Text("Removed Solo Cooldown")
 
-                    if ImGui.Button("应用##9") then
+                    if ImGui.Button("Apply##9") then
                         local prefix = MPX()
                         STATS.STAT_SET_INT(MISC.GET_HASH_KEY(prefix .. "H4_TARGET_POSIX"), 1659429119, true)
                         STATS.STAT_SET_INT(MISC.GET_HASH_KEY(prefix .. "H4_COOLDOWN"), 0, true)
                         STATS.STAT_SET_INT(MISC.GET_HASH_KEY(prefix .. "H4_COOLDOWN_HARD"), 0, true)
-                        notification.show("已移除团队冷却时间")
+                        notification.show("Removed Team Cooldown")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("移除团队冷却时间")
-
-                    ImGui.Separator()
-
-                    -- ImGui.Text("一键完成佩里克岛抢劫可能有风险（收支差）、报错（无法获得金钱）等问题 同时会强制脚本主机 请注意使用")
-                    -- ImGui.Text("（我自己测试崩溃了）")
-                    -- if ImGui.Button("应用##10") then
-                    --     network.force_script_host("fm_mission_controller_2020")
-                    --     script.yield(1000)
-                    --     locals.set_int("fm_mission_controller_2020", 54763, 9)             
-                    --     locals.set_int("fm_mission_controller_2020", 54763 + 1776 + 1, 50) 
-                    --     notification.show("已完成佩里克岛抢劫")
-                    -- end
-                    -- ImGui.SameLine()
-                    -- ImGui.Text("一键完成佩里克岛抢劫")
-
-                    -- ImGui.Separator()
-
-                    -- if ImGui.Button("应用##11") then
-                    --     selectedCompoundAmount = 255
-                    --     selectedIslandAmount = 16777215
-                    --     selectedArtsAmount = 127
-                    --     notification.show("已选择满背包")
-                    -- end
-                    -- ImGui.SameLine()
-                    -- ImGui.Text("一键满背包容量")
+                    ImGui.Text("Remove Team Cooldown")
 
                     ImGui.EndTabItem()
                 end
                 
-                if ImGui.BeginTabItem("改分红(有风险注意使用)") then -- change player cuts tab
-                    ImGui.Text("改分红")
+                if ImGui.BeginTabItem("Set Player Cuts (Risky)") then -- change player cuts tab
+                    ImGui.Text("Set Player Cuts")
 
-                    cayoP1Cut, _ = ImGui.SliderInt("玩家1分红", cayoP1Cut, 0, 100)
-                    cayoP2Cut, _ = ImGui.SliderInt("玩家2分红", cayoP2Cut, 0, 100)
-                    cayoP3Cut, _ = ImGui.SliderInt("玩家3分红", cayoP3Cut, 0, 100)
-                    cayoP4Cut, _ = ImGui.SliderInt("玩家4分红", cayoP4Cut, 0, 100)
+                    cayoP1Cut, _ = ImGui.SliderInt("Player 1 Cut", cayoP1Cut, 0, 100)
+                    cayoP2Cut, _ = ImGui.SliderInt("Player 2 Cut", cayoP2Cut, 0, 100)
+                    cayoP3Cut, _ = ImGui.SliderInt("Player 3 Cut", cayoP3Cut, 0, 100)
+                    cayoP4Cut, _ = ImGui.SliderInt("Player 4 Cut", cayoP4Cut, 0, 100)
 
-                    if ImGui.Button("应用分红##1") then
+                    if ImGui.Button("ApplyPayout##1") then
                         script.run_in_fiber(function()
                             globals.set_int(1975799 + 831 + 56 + 1, cayoP1Cut)
                             globals.set_int(1975799 + 831 + 56 + 2, cayoP2Cut)
                             globals.set_int(1975799 + 831 + 56 + 3, cayoP3Cut)
                             globals.set_int(1975799 + 831 + 56 + 4, cayoP4Cut)
-                            notification.show("分红已应用") -- applied message
+                            notification.show("Player Cuts Applied") -- applied message
                         end)
                     end
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##12") then
+                    if ImGui.Button("Apply##12") then
                         -- Force script host
                         network.force_script_host("fm_mission_controller_2020")
                         script.yield(1000)
@@ -1478,10 +1444,10 @@ menu.on_draw(function()
                         globals.set_int(1976911 + 1 + (1 * 27) + 7 + 2, 1) 
                         globals.set_int(1976911 + 1 + (2 * 27) + 7 + 3, 1) 
                         globals.set_int(1976911 + 1 + (3 * 27) + 7 + 4, 1) 
-                        notification.show("所有玩家已经强制准备就绪")
+                        notification.show("Everyone Has Been Forced Ready")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("强制玩家准备(将强制成为脚本主机)")
+                    ImGui.Text("Force Players Ready Cayo")
 
                     ImGui.EndTabItem()
                 end
@@ -1492,98 +1458,98 @@ menu.on_draw(function()
             ImGui.EndTabItem()
         end
 
-        if ImGui.BeginTabItem("赌场抢劫") then -- Casino Heist Tab Item
+        if ImGui.BeginTabItem("Casino") then -- Casino Heist Tab Item
             if ImGui.BeginTabBar("CasinoFeatures1") then -- Casino bar
-                if ImGui.BeginTabItem("准备选项") then -- prep tab
-                    ImGui.Text("预设最高分红为 $3,619,000")
+                if ImGui.BeginTabItem("Prep Option") then -- prep tab
+                    ImGui.Text("Default max payout $3,619,000")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##13") then
+                    if ImGui.Button("Apply##13") then
                         STATS.SET_PACKED_STAT_BOOL_CODE(27227, true, 1)
                         STATS.SET_PACKED_STAT_BOOL_CODE(27227, true, 0)
-                        notification.show("游戏厅前置已完成, 请切换战局以应用!")
+                        notification.show("Casino Prep Completed, Please Switch Sessions to Apply!")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("跳过游戏厅前置")
+                    ImGui.Text("Skip Casino Prep")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##14") then
+                    if ImGui.Button("Apply##14") then
                         reset_casino_preps()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("重置抢劫准备")
+                    ImGui.Text("Reset Casino Prep")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##15") then
+                    if ImGui.Button("Apply##15") then
                         casino_silent_preset()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("完成隐秘潜入前置")
+                    ImGui.Text("Silent & Sneaky Approach")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##16") then
+                    if ImGui.Button("Apply##16") then
                         casino_big_con_preset()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("完成兵不厌诈前置")
+                    ImGui.Text("The Big Con Approach")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##17") then
+                    if ImGui.Button("Apply##17") then
                        casino_aggressive_preset()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("完成暴力强攻前置")
+                    ImGui.Text("Aggressive Approach")
 
 
 
                     ImGui.EndTabItem()
                 end
 
-                if ImGui.BeginTabItem("其他功能") then -- other features tab
+                if ImGui.BeginTabItem("Others") then -- other features tab
                 
-                    if ImGui.Button("应用##18") then
+                    if ImGui.Button("Apply##18") then
                         CUTSCENE.STOP_CUTSCENE_IMMEDIATELY()
-                        notification.show("已跳过过场")
+                        notification.show("Skipped Cutscene")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("跳过过场动画")
+                    ImGui.Text("Skip Cutscene Animation")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##19") then
+                    if ImGui.Button("Apply##19") then
                         locals.set_int("fm_mission_controller", 54037, 5)
-                        notification.show("已绕过指纹破解")
+                        notification.show("Bypassed Fingerprint Hack")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("绕过指纹破解")
+                    ImGui.Text("Bypass Fingerprint Hack")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##20") then
+                    if ImGui.Button("Apply##20") then
                         locals.set_int("fm_mission_controller", 55103, 5)
-                        notification.show("已绕过键盘输入破解")
+                        notification.show("Bypassed Keypad Hack enabled")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("绕过键盘输入破解")
+                    ImGui.Text("Bypass Keypad Hack enabled")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##21") then
+                    if ImGui.Button("Apply##21") then
                         local drillValue = locals.get_int("fm_mission_controller", 10549 + 37)
                         locals.set_int("fm_mission_controller", 10549 + 7, drillValue)
-                        notification.show("已启用赌场金库大门秒钻孔")
+                        notification.show("Vault drill bypassed")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("赌场金库大门秒钻孔")
+                    ImGui.Text("Vault drill bypass")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##22") then
+                    if ImGui.Button("Apply##22") then
                         local prefix0 = "MP0_"
                         local prefix1 = "MP1_"
 
@@ -1596,17 +1562,17 @@ menu.on_draw(function()
                         local cooldown1 = MISC.GET_HASH_KEY(prefix1 .. "MPPLY_H3_COOLDOWN")
                         STATS.STAT_SET_INT(cooldown0, -1, true)
                         STATS.STAT_SET_INT(cooldown1, -1, true)
-                        notification.show("已移除赌场抢劫冷却时间, 请重新进入街机铺以应用")
+                        notification.show("Removed Cooldown. Make Sure You Exit Your Arcade To Use This Feature")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("移除赌场抢劫冷却时间")
+                    ImGui.Text("Remove Heist Cooldown")
 
                     ImGui.Separator()
 
 
-                    if ImGui.Button("应用##23") then
+                    if ImGui.Button("Apply##23") then
                         -- Force script host
-                        notification.show("正在跳过检查点...")
+                        notification.show("Skipping Checkpoint...")
                         network.force_script_host("fm_mission_controller_2020")
                         script.yield(1000)
 
@@ -1621,41 +1587,41 @@ menu.on_draw(function()
                         locals.set_int("fm_mission_controller_2020", offset1, currentVal | bitToSet)
                     end
                     ImGui.SameLine()
-                    ImGui.Text("跳过检查点(不稳定)")
+                    ImGui.Text("Skip Checkpoint (Unstable)")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##24") then
+                    if ImGui.Button("Apply##24") then
                         instant_finish_casino_heist()
-                        notification.show("已完成赌场抢劫")
+                        notification.show("Casino heist completed")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("立刻完成赌场抢劫 (有风险注意使用)")
+                    ImGui.Text("Instantly Complete Casino Heist (Risky)")
 
                     ImGui.EndTabItem()
                 end
 
-                if ImGui.BeginTabItem("改分红(有风险注意使用)") then -- change player cuts tab
-                    ImGui.Text("改分红")
+                if ImGui.BeginTabItem("Set Player Cuts(Risky)") then -- change player cuts tab
+                    ImGui.Text("Set Player Cuts")
 
-                    hostCut, _ = ImGui.SliderInt("房主分红", hostCut, 0, 120)
-                    p2Cut, _ = ImGui.SliderInt("玩家2分红", p2Cut, 0, 120)
-                    p3Cut, _ = ImGui.SliderInt("玩家3分红", p3Cut, 0, 120)
-                    p4Cut, _ = ImGui.SliderInt("玩家4分红", p4Cut, 0, 120)
+                    hostCut, _ = ImGui.SliderInt("Host Cut", hostCut, 0, 120)
+                    p2Cut, _ = ImGui.SliderInt("Player 2 Cut", p2Cut, 0, 120)
+                    p3Cut, _ = ImGui.SliderInt("Player 3 Cut", p3Cut, 0, 120)
+                    p4Cut, _ = ImGui.SliderInt("Player 4 Cut", p4Cut, 0, 120)
 
-                    if ImGui.Button("应用分红##2") then
+                    if ImGui.Button("ApplyPayout##2") then
                         script.run_in_fiber(function()
                             globals.set_int(1968996 + 1497 + 736 + 92 + 1, hostCut)
                             globals.set_int(1968996 + 1497 + 736 + 92 + 2, p2Cut)
                             globals.set_int(1968996 + 1497 + 736 + 92 + 3, p3Cut)
                             globals.set_int(1968996 + 1497 + 736 + 92 + 4, p4Cut)
-                            notification.show("分红已应用") -- applied message
+                            notification.show("Cuts Applied") -- applied message
                         end)
                     end
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##25") then
+                    if ImGui.Button("Apply##25") then
                         -- Force script host
                         network.force_script_host("fm_mission_controller")
                         script.yield(1000)
@@ -1663,10 +1629,10 @@ menu.on_draw(function()
                         globals.set_int(1973359 + 1 + (1 * 68) + 7 + 2, 1)
                         globals.set_int(1973359 + 1 + (2 * 68) + 7 + 3, 1)
                         globals.set_int(1973359 + 1 + (3 * 68) + 7 + 4, 1)
-                        notification.show("所有玩家已经强制准备就绪")
+                        notification.show("Forced Ready") -- Forced Ready
                     end
                     ImGui.SameLine()
-                    ImGui.Text("强制玩家准备(将强制成为脚本主机)")
+                    ImGui.Text("Force Players Ready")
 
                     ImGui.EndTabItem()
                 end
@@ -1677,52 +1643,52 @@ menu.on_draw(function()
             ImGui.EndTabItem()
         end
 
-        if ImGui.BeginTabItem("末日抢劫") then -- Doomsday Heist Tab Item
+        if ImGui.BeginTabItem("Doomsday") then -- Doomsday Heist Tab Item
             if ImGui.BeginTabBar("DoomsdayFeatures1") then -- Doomsday bar
-                if ImGui.BeginTabItem("准备选项") then -- prep tab
-                    ImGui.Text("预设最高分红为 $2,550,000")
+                if ImGui.BeginTabItem("Prep Option") then -- prep tab
+                    ImGui.Text("Default max payout $2,550,000")
                     
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##26") then
+                    if ImGui.Button("Apply##26") then
                         applyDoomsdayAct1Preps()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("一键开启 行动 1 - 数据泄露差事")
+                    ImGui.Text("Preset Act I: The Data Breaches")
 
-                    if ImGui.Button("应用##27") then
+                    if ImGui.Button("Apply##27") then
                         applyDoomsdayAct2Preps()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("一键开启 行动 2 - 波格丹危机")
+                    ImGui.Text("Preset Act II: The Bogdan Problem")
 
-                    if ImGui.Button("应用##28") then
+                    if ImGui.Button("Apply##28") then
                         applyDoomsdayAct3Preps()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("一键开启 行动 3 - 末日将至")
+                    ImGui.Text("Preset Act III: The Doomsday Scenario")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##29") then
+                    if ImGui.Button("Apply##29") then
                         instant_finish_Doomsday_heist()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("立刻完成末日抢劫 (有风险注意使用)")
+                    ImGui.Text("Instant Finish Doomsday Heist")
 
                     ImGui.EndTabItem()
                 end
 
-                if ImGui.BeginTabItem("其他功能") then -- other features tab
-                    if ImGui.Button("应用##30") then
+                if ImGui.BeginTabItem("Others") then -- other features tab
+                    if ImGui.Button("Apply##30") then
                         resetDoomsdayPreps()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("重置末日抢劫准备")
+                    ImGui.Text("Reset Doomsday Heist")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##31") then
+                    if ImGui.Button("Apply##31") then
                         -- Ready player global indexes hehe dont fkn ask
                         local Ready = {
                             Player1 = { type = "int", global = 1882449 + 1 + (0 * 149) + 43 + 11 + 1 },
@@ -1740,78 +1706,78 @@ menu.on_draw(function()
                         globals.set_int(Ready.Player3.global, 1)
                         globals.set_int(Ready.Player4.global, 1)
 
-                        notification.show("已强制准备")
+                        notification.show("Forced Ready")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("强制所有玩家准备")
+                    ImGui.Text("Force Players Ready")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##32") then
+                    if ImGui.Button("Apply##32") then
                         CUTSCENE.STOP_CUTSCENE_IMMEDIATELY()
-                        notification.show("已跳过过场动画")
+                        notification.show("Skipped Cutscene")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("跳过过场动画")
+                    ImGui.Text("Skip Cutscene")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##33") then
+                    if ImGui.Button("Apply##33") then
                         locals.set_int("fm_mission_controller", 1539, 2)
-                        notification.show("已秒破解数据泄露服务器面板")
+                        notification.show("Bypassed Data Breaches hack")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("秒破解数据泄露服务器面板")
+                    ImGui.Text("Bypass Hack Act I: The Data Breaches")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##34") then
+                    if ImGui.Button("Apply##34") then
                         locals.set_int("fm_mission_controller", 1431, 3) 
-                        notification.show("已秒破解末日将至激光拼图面板")
+                        notification.show("Bypassed Doomsday Scenario Hack")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("秒破解末日将至激光拼图面板")
+                    ImGui.Text("Bypass Hack Act III: The Doomsday")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##35") then
+                    if ImGui.Button("Apply##35") then
                         SkipAllDoomsCheckpoints() 
                     end
                     ImGui.SameLine()
-                    ImGui.Text("跳过检查点")
+                    ImGui.Text("Skip Checkpoints")
 
                     ImGui.EndTabItem()
                 end
 
-                if ImGui.BeginTabItem("改分红(有风险注意使用)") then
-                    ImGui.Text("改分红")
+                if ImGui.BeginTabItem("Set Payout(Risky)") then
+                    ImGui.Text("Set Payout")
 
-                    if ImGui.Button("应用##36") then
+                    if ImGui.Button("Apply##36") then
                         applyDoomsdayAct1MaxCuts()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("应用 行动 1 - 数据泄露差事 最大分红")
+                    ImGui.Text("Apply Act I: The Data Breaches Max Cut")
 
-                    if ImGui.Button("应用##37") then
+                    if ImGui.Button("Apply##37") then
                         applyDoomsdayAct2MaxCuts()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("应用 行动 2 - 波格丹危机 最大分红")
+                    ImGui.Text("Apply Act II: The Bogdan Problem Max Cut")
 
-                    if ImGui.Button("应用##38") then
+                    if ImGui.Button("Apply##38") then
                         applyDoomsdayAct3MaxCuts()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("应用 行动 3 - 末日将至 最大分红")
+                    ImGui.Text("Apply Act III: The Doomsday Scenario Max Cut")
 
                     ImGui.Separator()
 
-                    DoomsdayHostCut, _ = ImGui.SliderInt("房主分红", DoomsdayHostCut, 0, 1000)
-                    Doomsdayp2Cut, _ = ImGui.SliderInt("玩家2分红", Doomsdayp2Cut, 0, 1000)
-                    Doomsdayp3Cut, _ = ImGui.SliderInt("玩家3分红", Doomsdayp3Cut, 0, 1000)
-                    Doomsdayp4Cut, _ = ImGui.SliderInt("玩家4分红", Doomsdayp4Cut, 0, 1000)
+                    DoomsdayHostCut, _ = ImGui.SliderInt("Host Cut", DoomsdayHostCut, 0, 1000)
+                    Doomsdayp2Cut, _ = ImGui.SliderInt("Player 2 Cut", Doomsdayp2Cut, 0, 1000)
+                    Doomsdayp3Cut, _ = ImGui.SliderInt("Player 3 Cut", Doomsdayp3Cut, 0, 1000)
+                    Doomsdayp4Cut, _ = ImGui.SliderInt("Player 4 Cut", Doomsdayp4Cut, 0, 1000)
 
-                    if ImGui.Button("应用分红##3") then
+                    if ImGui.Button("ApplyPayout##3") then
                         script.run_in_fiber(function()
                             local base = 1965032
 
@@ -1819,7 +1785,7 @@ menu.on_draw(function()
                             globals.set_int(base + 2, Doomsdayp2Cut)
                             globals.set_int(base + 3, Doomsdayp3Cut)
                             globals.set_int(base + 4, Doomsdayp4Cut)
-                            notification.show("分红已应用") -- applied message
+                            notification.show("Cuts Applied") -- applied message
                         end)
                     end
                     
@@ -1833,21 +1799,21 @@ menu.on_draw(function()
             ImGui.EndTabItem()
         end
 
-        if ImGui.BeginTabItem("事务所") then --  Agency Tab Item
+        if ImGui.BeginTabItem("Agency") then --  Agency Tab Item
             if ImGui.BeginTabBar("AgencyFeatures1") then -- Agency bar
-                if ImGui.BeginTabItem("基本功能") then -- prep tab
-                    ImGui.Text("预设最高分红为 $2,500,000")
+                if ImGui.BeginTabItem("Basic") then -- prep tab
+                    ImGui.Text("Default max payout $2,500,000")
 
-                    if ImGui.Button("应用##39") then
+                    if ImGui.Button("Apply##39") then
                         locals.set_int("agency_prep", 1568, 2)
-                        notification.show("已应用最大收益 $2,500,000")
+                        notification.show("Applied max payout $2,500,000")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("设置最大收益(请在任务启动之后使用)")
+                    ImGui.Text("Set max payout (Please use after mission starts)")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##40") then
+                    if ImGui.Button("Apply##40") then
                         local charIndex = globals.get_int(1574927) or 0
                         if charIndex ~= 1 then charIndex = 0 end  -- Only 0 or 1 allowed
                         local prefix = "MP" .. tostring(charIndex) .. "_"
@@ -1856,14 +1822,14 @@ menu.on_draw(function()
                         STATS.STAT_SET_INT(MISC.GET_HASH_KEY(prefix .. "FIXER_SECURITY_CONTRACT_COOLDOWN_TIME"), 0, true)
                         STATS.STAT_SET_INT(MISC.GET_HASH_KEY(prefix .. "REQUEST_FRANKLIN_PAYPHONE_HIT_COOLDOWN"), 0, true)
 
-                        notification.show("已跳过事务所任务冷却")
+                        notification.show("Removed Cooldown")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("跳过事务所任务冷却")
+                    ImGui.Text("Remove Cooldown Agency")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##41") then
+                    if ImGui.Button("Apply##41") then
                         local offset = 20391 + 2
                         local offset1 = 54763 + 2
                         local bitToSet = (1 << 17)
@@ -1873,37 +1839,37 @@ menu.on_draw(function()
                         local currentVal = locals.get_int("fm_mission_controller_2020", offset)
                         locals.set_int("fm_mission_controller_2020", offset1, currentVal | bitToSet)
 
-                        notification.show("正在跳过检查点...")
+                        notification.show("Skipping Checkpoint...")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("跳过检查点")
+                    ImGui.Text("Skip Checkpoints")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##42") then
+                    if ImGui.Button("Apply##42") then
                         instant_finish_agency_final()
                     end
                     ImGui.SameLine()
-                    ImGui.Text("一键完成事务所最终任务")
+                    ImGui.Text("Instant Complete Agency Heist")
 
                     ImGui.Separator()
 
-                    ImGui.Text("自定义合同: (默认：无)") -- combo start
+                    ImGui.Text("Custom Contract: (Default: None)") -- combo start
 
                     local function selectContract(index)
                         selectedContractIndex = index
                     end
 
-                    ImGui.Combo("合同", contracts, selected_contract, function(idx, label)
+                    ImGui.Combo("Contract", contracts, selected_contract, function(idx, label)
                         selected_contract = idx
                         local id = contract_ids[idx + 1]
                         selectContract(id)
-                        notification.show(string.format("已选择: %s", label))
+                        notification.show(string.format("Selected: %s", label))
                     end)
 
                     ImGui.Text("")
-                    
-                    if ImGui.Button("完成准备并应用合同") then
+
+                    if ImGui.Button("Complete Prep and Apply Contract") then
                         applyContract(id)
                     end
 
@@ -1917,49 +1883,49 @@ menu.on_draw(function()
             ImGui.EndTabItem()
         end
 
-        if ImGui.BeginTabItem("改装铺") then --  Autoshop Tab Item
+        if ImGui.BeginTabItem("Autoshop") then --  Autoshop Tab Item
             if ImGui.BeginTabBar("AutoshopFeatures1") then -- Autoshop bar
-                if ImGui.BeginTabItem("准备选项和主要功能") then -- prep tab
-                    ImGui.Text("选择合约:")
+                if ImGui.BeginTabItem("Prep Option") then -- prep tab
+                    ImGui.Text("Select Contract:")
 
                     local function selectAutoShopContract(index)
                         selectedAutoShopContractIndex = index
                     end
 
-                    ImGui.Combo("改装铺合约", autoShopContracts, selected_AutoShopcontract, function(idx, label)
+                    ImGui.Combo("Autoshop Contract", autoShopContracts, selected_AutoShopcontract, function(idx, label)
                         selected_AutoShopcontract = idx
                         local id = autoShopContracts_ids[idx + 1]
                         selectAutoShopContract(id)
-                        notification.show(string.format("已选择: %s", label))
+                        notification.show(string.format("Selected: %s", label))
                     end)
 
 
                     ImGui.Text("")
 
-                    if ImGui.Button("跳过准备并应用合同") then
+                    if ImGui.Button("Skip Prep and Apply Contract") then
                         apply_and_complete_auto_shop(id)
                     end
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##43") then
+                    if ImGui.Button("Apply##43") then
                         locals.set_int("tuner_planning", 406, 2)
 
-                        notification.show("已重置抢劫计划版")
+                        notification.show("Reset Heist Planning")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("重置抢劫计划版")
+                    ImGui.Text("Reset Heist Planning")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("跳过过场") then
+                    if ImGui.Button("Skip Cutscene") then
                         CUTSCENE.STOP_CUTSCENE_IMMEDIATELY()
-                        notification.show("已跳过过场")
+                        notification.show("Skipped Cutscene")
                     end
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##44") then
+                    if ImGui.Button("Apply##44") then
                         local offset = 20391 + 2
                         local offset1 = 54763 + 2
                         local bitToSet = (1 << 17)
@@ -1969,14 +1935,14 @@ menu.on_draw(function()
                         locals.set_int("fm_mission_controller", offset, currentVal | bitToSet)
                         local currentVal = locals.get_int("fm_mission_controller_2020", offset)
                         locals.set_int("fm_mission_controller_2020", offset1, currentVal | bitToSet)
-                        notification.show("正在跳过检查点...")
+                        notification.show("Skipping Checkpoint...")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("跳过检查点")
+                    ImGui.Text("Skip Checkpoints")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##45") then
+                    if ImGui.Button("Apply##45") then
                         -- Force script host for fm_mission_controller
                         network.force_script_host("fm_mission_controller_2020")
                         script.yield(1000)
@@ -1984,15 +1950,15 @@ menu.on_draw(function()
                         -- Set finish
                         locals.set_int("fm_mission_controller_2020", 54763 + 1, 51338977)
                         locals.set_int("fm_mission_controller_2020", 54763 + 1776 + 1, 101) 
-                        notification.show("已完成改装铺抢劫任务")
+                        notification.show("Completed Autoshop Heist")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("一键完成改装铺抢劫任务 (有风险注意使用)")
+                    ImGui.Text("Instant Complete Autoshop Heist (Risky)")
 
                     ImGui.Separator()
-                    ImGui.Text("最大金额为 $2,200,000, 而且最大分红不适用于联合储蓄任务")
+                    ImGui.Text("Max Payout does not work with Union Depository")
 
-                    if ImGui.Button("应用##46") then
+                    if ImGui.Button("Apply##46") then
                         local payout = 2200000
                         tunables.set_int(util.joaat("TUNER_ROBBERY_LEADER_CASH_REWARD0"), payout)
                         tunables.set_int(util.joaat("TUNER_ROBBERY_LEADER_CASH_REWARD1"), payout)
@@ -2004,11 +1970,11 @@ menu.on_draw(function()
                         tunables.set_int(util.joaat("TUNER_ROBBERY_LEADER_CASH_REWARD7"), payout)
                         locals.set_int("tuner_planning", 406, 2)
 
-                        notification.show("已应用金额: $" .. payout)
+                        notification.show("Applied Amount: $" .. payout)
                         notification.show(tostring(util.joaat("TUNER_ROBBERY_LEADER_CASH_REWARD0")))
                     end
                     ImGui.SameLine()
-                    ImGui.Text("应用最大支付金额")
+                    ImGui.Text("Apply Max Payout")
 
 
                     ImGui.EndTabItem()
@@ -2020,97 +1986,61 @@ menu.on_draw(function()
             ImGui.EndTabItem()
         end
 
-        if ImGui.BeginTabItem("回收站") then --  Salvage Tab Item
-            if ImGui.BeginTabBar("SalvageFeatures1") then -- Salvage bar
-                if ImGui.BeginTabItem("准备选项") then -- prep tab
-                    if ImGui.BeginTabBar("SalvageFeatures2") then -- Salvage bar
-                        if ImGui.BeginTabItem("插槽 1") then
-                            ImGui.Text("未完成")
-                            ImGui.EndTabItem()
-                        end
-                    
-                        if ImGui.BeginTabItem("插槽 2") then
-                            ImGui.Text("未完成")
-                            ImGui.EndTabItem()
-                        end
-
-                        if ImGui.BeginTabItem("插槽 3") then
-                            ImGui.Text("未完成")
-                            ImGui.EndTabItem()
-                        end
-                        ImGui.EndTabBar()
-                    end
-                
-                
-                    ImGui.EndTabItem()
-                end
-
-                if ImGui.BeginTabItem("其他功能") then -- other features tab
-                    -- start here
-                    ImGui.EndTabItem()
-                end
-
-                ImGui.EndTabBar()
-            end
-
-            ImGui.EndTabItem()
-        end
-
-        if ImGui.BeginTabItem("经典抢劫任务") then --  Classic job Tab Item
+        if ImGui.BeginTabItem("Classic Heist") then --  Classic job Tab Item
             if ImGui.BeginTabBar("ClassicFeatures1") then -- Classic bar
-                if ImGui.BeginTabItem("主要选项") then -- prep tab
-                    ImGui.Text("预设最高分红 3,000,000$")
+                if ImGui.BeginTabItem("Main Options") then -- prep tab
+                    ImGui.Text("Max payout is 3,000,000$")
 
-                    if ImGui.Button("应用##47") then
+                    if ImGui.Button("Apply##47") then
                         STATS.STAT_SET_INT(MISC.GET_HASH_KEY("MP0_HEIST_PLANNING_STAGE"), -1, true)
                         STATS.STAT_SET_INT(MISC.GET_HASH_KEY("MP1_HEIST_PLANNING_STAGE"), -1, true)
-                        notification.show("已跳过公寓任务抢劫前置, 切换战局以应用")
+                        notification.show("Skipped apartment heist prep, switch sessions to Apply")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("跳过公寓任务抢劫前置")
+                    ImGui.Text("Skip apartment heist prep")
 
                     ImGui.Separator()
 
-                    if ImGui.Button("重新加载抢劫面板") then
+                    if ImGui.Button("Redraw Heist Board") then
                         globals.set_int(1931835, 22)
-                        notification.show("已重新加载抢劫面板")
+                        notification.show("Redrawed Heist Board")
                     end
 
                     ImGui.Separator()
 
-                    if ImGui.Button("跳过过场") then
+                    if ImGui.Button("Skip Cutscene") then
                         CUTSCENE.STOP_CUTSCENE_IMMEDIATELY()
-                        notification.show("已跳过过场")
+                        notification.show("Skipped Cutscene")
                     end
 
                     ImGui.Separator()
-                    ImGui.Text("绕过、便利功能:")
+                    ImGui.Text("Others Features:")
 
-                    if ImGui.Button("秒解全福银行贪吃蛇") then
+                    if ImGui.Button("Bypass Fleeca Hack") then
                         locals.set_int("fm_mission_controller", 12244, 7)
-                        notification.show("已秒解全福银行贪吃蛇")
+                        notification.show("Fleeca hack bypassed")
                     end
 
-                    if ImGui.Button("绕过全福银行钻头钻孔") then
+                    if ImGui.Button("Bypass Fleeca Drill") then
                         locals.set_float("fm_mission_controller", 10520, 100.0)
-                        notification.show("已绕过全福银行钻头钻孔")
+                        notification.show("Bypassed Fleeca Drill")
                     end
 
-                    if ImGui.Button("绕过太平洋银行黑客破解") then
+                    if ImGui.Button("Bypass Pacific Hack") then
                         locals.set_int("fm_mission_controller", 10213, 9)
-                        notification.show("已绕过太平洋银行黑客破解")
+                        notification.show("Bypassed Pacific Hack")
                     end
 
-                    if ImGui.Button("取消公寓抢劫冷却时间") then
+                    if ImGui.Button("Kill Classic Heist Cooldown") then
                         local playerId = PLAYER.PLAYER_ID()
                         local cooldownGlobal = 1877086 + 1 + (playerId * 77) + 76
                         globals.set_int(cooldownGlobal, -1)
-                        notification.show("已取消公寓抢劫冷却时间")
+                        notification.show("Killed Classic Heist Cooldown")
                     end
 
                     ImGui.Separator()
 
-                    if ImGui.Button("跳过检查点") then
+                    if ImGui.Button("Skip Checkpoint") then
                         local offset = 20391 + 2
                         local offset1 = 54763 + 2
                         local bitToSet = (1 << 17)
@@ -2120,81 +2050,81 @@ menu.on_draw(function()
                         locals.set_int("fm_mission_controller", offset, currentVal | bitToSet)
                         local currentVal = locals.get_int("fm_mission_controller_2020", offset)
                         locals.set_int("fm_mission_controller_2020", offset1, currentVal | bitToSet)
-                        notification.show("正在跳过检查点...")
+                        notification.show("Skipping Checkpoint...")
                     end
 
-                    if ImGui.Button("一键完成经典抢劫任务(直接完成太平洋抢劫)") then
+                    if ImGui.Button("Instant Complete Classic Heist (It will Complete Pacific Heist)") then
                         classic_heist_instant_()
                     end
 
-                    if ImGui.Button("解锁公寓所有抢劫任务") then
+                    if ImGui.Button("Unlock All Apartment Heists") then
                         unlockAllClassicHeist()
                     end
                 
                     ImGui.EndTabItem()
                 end
 
-                if ImGui.BeginTabItem("改分红(有风险注意使用)") then -- change player cuts tab
-                    ImGui.Text("改分红")
-                    ImGui.Text("注意: 这里改分红只是为了自定义 请不要超过各抢劫任务的最大分红")
-                    ImGui.Text("各抢劫任务的最大分红会在下面列表说明")
+                if ImGui.BeginTabItem("Set Payout(Risky)") then -- change player cuts tab
+                    ImGui.Text("Set Payout")
+                    ImGui.Text("Note: The Set Payout here is for customization only. Please do not exceed the maximum bonus of each robbery mission.")
+                    ImGui.Text("The maximum payouts for each robbery mission is shown in the table below.")
 
-                    classic_cut1, _ = ImGui.SliderInt("玩家1分红", classic_cut1, 0, 1490)
-                    classic_cut2, _ = ImGui.SliderInt("玩家2分红", classic_cut2, 0, 1490)
-                    classic_cut3, _ = ImGui.SliderInt("玩家3分红", classic_cut3, 0, 1490)
-                    classic_cut4, _ = ImGui.SliderInt("玩家4分红", classic_cut4, 0, 1490)
+                    classic_cut1, _ = ImGui.SliderInt("Player 1 Cut", classic_cut1, 0, 1490)
+                    classic_cut2, _ = ImGui.SliderInt("Player 2 Cut", classic_cut2, 0, 1490)
+                    classic_cut3, _ = ImGui.SliderInt("Player 3 Cut", classic_cut3, 0, 1490)
+                    classic_cut4, _ = ImGui.SliderInt("Player 4 Cut", classic_cut4, 0, 1490)
 
-                    if ImGui.Button("应用分红##4") then
-                        notification.show("已应用自定义分红")
+                    if ImGui.Button("ApplyPayout##4") then
+                        notification.show("Applied Cuts")
                         classic_apply_cuts(classic_cut1, classic_cut2, classic_cut3, classic_cut4) -- do we need to return the cuts here? unsure,
                     end
 
                     ImGui.Separator()
-                    ImGui.Text("应用各抢劫任务最大分红列表:")
+                    ImGui.Text("Apply maximum payouts for each robbery mission:")
 
-                    if ImGui.Button("应用Fleeca 银行抢劫任务最大分红(<= 1490%)") then
+                    if ImGui.Button("Max payout Fleeca Heist (<= 1490%)") then
                         classic_cut1 = 1490
                         classic_cut2 = 1490
                         classic_cut3 = 1490
                         classic_cut4 = 1490
 
-                        notification.show("已应用最大分红")
+                        notification.show("Applied Max Cuts")
                         classic_apply_cuts(classic_cut1, classic_cut2, classic_cut3, classic_cut4)  -- call the apply function
                     end
 
-                    if ImGui.Button("应用越狱差事最大分红(<= 429%)") then
+                    if ImGui.Button("Max payout Prison Break(<= 429%)") then
                         classic_cut1 = 429
                         classic_cut2 = 429
                         classic_cut3 = 429
                         classic_cut4 = 429
 
-                        notification.show("已应用最大分红")
+                        notification.show("Applied Max Cuts")
                         classic_apply_cuts(classic_cut1, classic_cut2, classic_cut3, classic_cut4)  -- call the apply function
                     end
 
-                    if ImGui.Button("应用人道实验室差事最大分红(<= 317%)") then
+                    if ImGui.Button("Max payout Humane Labs (<= 317%)") then
                         classic_cut1 = 317
                         classic_cut2 = 317
                         classic_cut3 = 317
                         classic_cut4 = 317
 
-                        notification.show("已应用最大分红")
+                        notification.show("Applied Max Cuts")
                         classic_apply_cuts(classic_cut1, classic_cut2, classic_cut3, classic_cut4)  -- call the apply function
                     end
 
-                    if ImGui.Button("应用A系列(崔佛的抢劫任务)最大分红(<= 200)") then
+                    if ImGui.Button("Max payout A-Series (trevor) (<= 200)") then
                         classic_cut1 = 200
                         classic_cut2 = 200
                         classic_cut3 = 200
                         classic_cut4 = 200
 
-                        notification.show("已应用最大分红")
+                        notification.show("Applied Max Cuts")
                         classic_apply_cuts(classic_cut1, classic_cut2, classic_cut3, classic_cut4)  -- call the apply function
                     end
 
                     ImGui.Separator()
 
-                    if ImGui.Button("应用##48") then
+                    if ImGui.Button("Apply##48") then
                         network.force_script_host("fm_mission_controller")
                         script.yield(1000)
 
@@ -2205,10 +2135,10 @@ menu.on_draw(function()
                             globals.set_int(globalIndex, 6)
                         end
 
-                        notification.show("所有玩家已经强制准备就绪")
+                        notification.show("Forced Ready")
                     end
                     ImGui.SameLine()
-                    ImGui.Text("强制玩家准备(将强制成为脚本主机)")
+                    ImGui.Text("Force players ready")
 
 
 
@@ -2221,15 +2151,6 @@ menu.on_draw(function()
 
             ImGui.EndTabItem()
         end
-
-        -- if ImGui.BeginTabItem("其他功能") then --  Miscellaneous Tab Item
-        --     if ImGui.Button("天启炮退款 (仍在测试阶段)") then
-        --         local g_iOrbitalCannonRefundBS = 1965652
-        --         setBit(g_iOrbitalCannonRefundBS, 1)
-        --     end
-
-        --     ImGui.EndTabItem()
-        -- end
 
         ImGui.EndTabBar()
     end
