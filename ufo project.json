@@ -1,0 +1,197 @@
+{
+	"CompatibilityVersion": 2,
+	"Objects": [ {
+		"AttachInfo": {
+			"AttachedTo": 33321,
+			"BoneIdx": 0,
+			"Pitch": 0.0,
+			"Position": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			},
+			"Roll": -0.0,
+			"Yaw": -0.0
+		},
+		"Attached": true,
+		"FrozenInPlace": false,
+		"Handle": 81166,
+		"HasCollision": true,
+		"Health": 1000.0,
+		"Invincible": false,
+		"LodDist": 1200,
+		"MaxHealth": 1000.0,
+		"ModelHash": 766526323,
+		"ObjectInfo": {
+			"CanPopTires": false,
+			"SpeedBoost": 30,
+			"SpeedBoostDuration": 0.4,
+			"Texture": 0
+		},
+		"Opacity": 255,
+		"Position": {
+			"x": 1.7559814453125,
+			"y": 1.596923828125,
+			"z": 0.58694362640381
+		},
+		"RenderScorched": false,
+		"Rotation": {
+			"Pitch": 1.729304432869,
+			"Roll": 2.568687915802,
+			"Yaw": -37.662590026855
+		},
+		"Type": 3,
+		"Visible": true
+	}, {
+		"Attached": false,
+		"FrozenInPlace": false,
+		"Handle": 33321,
+		"HasCollision": true,
+		"Health": 1000.0,
+		"Invincible": false,
+		"LodDist": 1000,
+		"MaxHealth": 1000.0,
+		"ModelHash": 970385471,
+		"Opacity": 255,
+		"Position": {
+			"x": 1.7559814453125,
+			"y": 1.596923828125,
+			"z": 0.58694362640381
+		},
+		"RenderScorched": false,
+		"Rotation": {
+			"Pitch": 1.729304432869,
+			"Roll": 2.568687915802,
+			"Yaw": -37.662590026855
+		},
+		"Type": 2,
+		"VehicleInfo": {
+			"BulletproofTires": false,
+			"Colors": {
+				"Dashboard": 0,
+				"Interior": 0,
+				"IsPrimaryCustom": false,
+				"IsSecondaryCustom": false,
+				"Pearl": 8,
+				"Primary": 121,
+				"Secondary": 121,
+				"TyreSmokeB": 255,
+				"TyreSmokeG": 255,
+				"TyreSmokeR": 255,
+				"Wheel": 156,
+				"Xenon": 255
+			},
+			"DirtLevel": 5.0,
+			"DoorLockStatus": 1,
+			"DoorsBroken": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false,
+				"5": false
+			},
+			"DoorsOpen": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false,
+				"5": false
+			},
+			"DriftTires": false,
+			"EngineOn": false,
+			"Extra": [ true, true ],
+			"HorsePowerMultiplier": -1.0,
+			"LightsIntensity": 1.0,
+			"Livery": -1,
+			"Livery2": -1,
+			"Mods": {
+				"0": [ -1, 0 ],
+				"1": [ -1, 0 ],
+				"2": [ -1, 0 ],
+				"3": [ -1, 0 ],
+				"4": [ -1, 0 ],
+				"5": [ -1, 0 ],
+				"6": [ -1, 0 ],
+				"7": [ -1, 0 ],
+				"8": [ -1, 0 ],
+				"9": [ -1, 0 ],
+				"10": [ -1, 0 ],
+				"11": [ -1, 0 ],
+				"12": [ -1, 0 ],
+				"13": [ -1, 0 ],
+				"14": [ -1, 0 ],
+				"15": [ -1, 0 ],
+				"16": [ -1, 0 ],
+				"17": false,
+				"18": true,
+				"19": false,
+				"20": true,
+				"21": false,
+				"22": true,
+				"23": [ 49, 1 ],
+				"24": [ -1, 0 ],
+				"25": [ -1, 0 ],
+				"26": [ -1, 0 ],
+				"27": [ -1, 0 ],
+				"28": [ -1, 0 ],
+				"29": [ -1, 0 ],
+				"30": [ -1, 0 ],
+				"31": [ -1, 0 ],
+				"32": [ -1, 0 ],
+				"33": [ -1, 0 ],
+				"34": [ -1, 0 ],
+				"35": [ -1, 0 ],
+				"36": [ -1, 0 ],
+				"37": [ -1, 0 ],
+				"38": [ -1, 0 ],
+				"39": [ -1, 0 ],
+				"40": [ -1, 0 ],
+				"41": [ -1, 0 ],
+				"42": [ -1, 0 ],
+				"43": [ -1, 0 ],
+				"44": [ -1, 0 ],
+				"45": [ -1, 0 ],
+				"46": [ -1, 0 ],
+				"47": [ -1, 0 ],
+				"48": [ -1, 0 ]
+			},
+			"Neons": {
+				"B": 255,
+				"Back": true,
+				"Front": true,
+				"G": 255,
+				"Left": true,
+				"R": 255,
+				"Right": true
+			},
+			"NumberPlateIndex": 5,
+			"NumberPlateText": "63RCV534",
+			"PaintFade": 0.44705885648727,
+			"ReducedGrip": false,
+			"RoofState": 0,
+			"Siren": false,
+			"SteeringAngle": 0.0,
+			"TiresBursted": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false,
+				"5": false
+			},
+			"TorqueMultiplier": 1.0,
+			"WheelType": 0,
+			"WindowTint": 6
+		},
+		"Visible": true
+	} ],
+	"ReferencePoint": {
+		"Pos": {
+			"x": -1294.7266845703,
+			"y": -3031.5319824219,
+			"z": 14.143286705017
+		}
+	}
+}
